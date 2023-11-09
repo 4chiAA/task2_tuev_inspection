@@ -18,4 +18,5 @@ public class CarInspectionService extends Car{
     public static boolean hasThreeOrFiveDoors(Car car) {
         return car.getNumberOfDoors() == 3 || car.getNumberOfDoors() == 5;
     }
+
 }
