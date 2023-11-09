@@ -57,6 +57,54 @@ class CarInspectionServiceTest {
         assertFalse(actual);
     }
 
+    @Test
+    void hasAirbag_whenCarHasAAirbag_thenReturnTrue(){
+        // GIVEN
+        Car car = new Car(4, 4, true, true);
+        // WHEN
+        boolean actual = CarInspectionService.hasAirbag(car);
+        // THEN
+        assertTrue(actual);
+    }
 
+    @Test
+    void hasAirbag_whenCarHasNoAirbag_thenReturnFalse(){
+        // GIVEN
+        Car car = new Car(4, 4, false, false);
+        // WHEN
+        boolean actual = CarInspectionService.hasAirbag(car);
+        // THEN
+        assertFalse(actual);
+    }
+
+    @Test
+    void hasThreeOrFiveDoors_whenCarHas3Doors_thenReturnTrue(){
+        // GIVEN
+        Car car = new Car(4, 3, true, true);
+        // WHEN
+        boolean actual = CarInspectionService.hasThreeOrFiveDoors(car);
+        // THEN
+        assertTrue(actual);
+    }
+
+    @Test
+    void hasThreeOrFiveDoors_whenCarHas5Doors_thenReturnTrue(){
+        // GIVEN
+        Car car = new Car(4, 5, true, true);
+        // WHEN
+        boolean actual = CarInspectionService.hasThreeOrFiveDoors(car);
+        // THEN
+        assertTrue(actual);
+    }
+
+    @Test
+    void hasThreeOrFiveDoors_whenCarHas4Doors_thenReturnFalse(){
+        // GIVEN
+        Car car = new Car(4, 4, false, false);
+        // WHEN
+        boolean actual = CarInspectionService.hasThreeOrFiveDoors(car);
+        // THEN
+        assertFalse(actual);
+    }
 
 }

@@ -10,4 +10,12 @@ public class CarInspectionService extends Car{
     public static boolean hasSeatBelt(Car car) {
         return car.isSeatBelt();
     }
+
+    public static boolean hasAirbag(Car car) {
+        return car.isAirbag();
+    }
+
+    public static boolean hasThreeOrFiveDoors(Car car) {
+        return car.getNumberOfDoors() == 3 || car.getNumberOfDoors() == 5;
+    }
 }
