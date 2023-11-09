@@ -107,5 +107,25 @@ class CarInspectionServiceTest {
         assertFalse(actual);
     }
 
+    @Test
+    void checkCar_whenCarHas4TiresAnd5DoorsAndASeatBeltAndAAirbag_thenReturnTrue(){
+        // GIVEN
+        Car car = new Car(4, 5, true, true);
+        // WHEN
+        boolean actual = CarInspectionService.checkCar(car);
+        // THEN
+        assertTrue(actual);
+    }
+
+    @Test
+    void checkCar_whenCarHas4TiresAnd5DoorsAndASeatBeltAndNoAirbag_thenReturnFalse(){
+        // GIVEN
+        Car car = new Car(4, 5, true, false);
+        // WHEN
+        boolean actual = CarInspectionService.checkCar(car);
+        // THEN
+        assertFalse(actual);
+    }
+
 
 }
